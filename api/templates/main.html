@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attack</title>
+</head>
+<body>
+    <h1>ATTACK</h1>
+    <form action="/add", method="post">
+    <div>
+        <label for="title"> TODO TITLE HERE </label>
+        <input type="text" name="title" aria-placeholder="Enter NEW Task">
+        <br>
+        <button type="submit">ADD</button>
+    </div>
+    </form>
+    {% for todo in todo_list %}
+    <p> {{ todo.id }} | {{ todo.task_title }} </p> 
+    {% if todo.completed == False%}
+        <span>Not Done</span>
+    {% else %}
+        <span>SUPER DONE!</span>
+    {% endif %}
+    <a href="/update/{{ todo.id }}">Completed</a>
+    <a href="/delete/{{ todo.id }}">Delete</a>
+    {% endfor %}
+</body>
+</html>
