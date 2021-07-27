@@ -3,7 +3,7 @@ import './App.css';
 import { AttackPage } from './Pages/AttackPage';
 import { Show } from './Pages/Show';
 import {
-  BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+  BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -22,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 
