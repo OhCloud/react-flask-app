@@ -1,17 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
+import { AttackPage } from './Pages/AttackPage';
+import { Show } from './Pages/Show';
+import {
+  BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function App() {
-  const [initalData, setInitialData] = useState([{}])
-
-  useEffect(()=> {
-    fetch('/api').then(
-      response => response.json()
-    ).then(data => setInitialData(data))
-  }, []);
   return (
     <div className="App">
-      <h1>{initalData.title}</h1>
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <AttackPage/>
+          </Route>
+          <Route path='/:id'>
+            <Show/>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
